@@ -21,7 +21,7 @@
 
 Formato interno da aplicação deverá ser produzida dos dados baixados.
 Abaixo segue a definição do formato local, otimizado para eficência da busca e tamanho.
-Serializar em XML, JSON, outro formato?
+Serializar em XML, JSON, outro formato mais compacto?
 
 ## Base local
 
