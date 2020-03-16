@@ -4,7 +4,7 @@ Tradicionalmente os dados das tabelas de procedimentos do SUS são consultados p
 
 > Realizar a transformação digital necessária para prover solução atualizada, de acesso fácil e rápido ao conteúdo das tabelas de procedimentos, medicamentos e outros do SUS.
 
-A transformação digital será realizada por meio de quatro produtos: (a) _endpoint_ para acesso aos dados geridos pelo SIGTAP; (b) cliente web; (c) cliente _mobile_ e (d) cliente _desktop_ via linha de comandos.
+A transformação digital será realizada por meio de quatro produtos: (a) [API](api) para acesso aos dados geridos pelo SIGTAP; (b) cliente [web](web); (c) cliente [mobile](mobile) e (d) cliente via linha de comandos ([cli](cli)).
 
 # SIGTAP (corrente)
 
