@@ -6,7 +6,7 @@ Tradicionalmente os dados das tabelas de procedimentos do SUS são consultados p
 
 ## Organização da solução
 
-A solução compreende quatro componentes: (a) [API](api) para acesso aos dados geridos pelo SIGTAP; (b) cliente [web](web); (c) cliente [mobile](mobile) e (d) cliente via linha de comandos ([cli](cli)). Estes quatro componentes fazem uso, direto ou indiretamente, do módulo [core](core), que implementa a funcionalidade de busca de procedimento.
+A solução compreende quatro componentes: (a) [API](solucao/api) para acesso aos dados geridos pelo SIGTAP; (b) cliente [web](solucao/web); (c) cliente [mobile](solucao/mobile) e (d) cliente via linha de comandos ([cli](solucao/cli)). Estes quatro componentes fazem uso, direto ou indiretamente, do módulo [core](solucao/core), que implementa a funcionalidade de busca de procedimento.
 
 # Sistema existente
 
