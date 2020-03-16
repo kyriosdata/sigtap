@@ -10,7 +10,9 @@ A solução compreende quatro componentes: (a) [API](solucao/api) para acesso ao
 
 # Sistema existente
 
-SIGTAP é o Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do SUS. Onde obter detalhes:
+SIGTAP é o Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do SUS. Observe que o SIGTAP é um sistema existente produzido pelo DATASUS, enquanto o
+Projeto SIGTAP, o presente projeto, visa a confecção de uma solução alternativa. Detalhes do sistema
+SIGTAP produzido pelo DATASUS podem ser encontrados:
 
 - No portal do [SIGTAP](http://sigtap.datasus.gov.br/) onde, inclusive, poderá fazer uso da versão web para consultas.
 - Na [wiki](https://wiki.saude.gov.br/sigtap) do SIGTAP.
