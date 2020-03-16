@@ -1,15 +1,16 @@
-# Projeto Acesso Fácil
+# Projeto SIGTAP
 
 Tradicionalmente os dados das tabelas de procedimentos do SUS são consultados por meio de um portal web e inclusive de uma aplicação _desktop_. A versão destes produtos não é atualizada desde 2011 (conforme manuais de documentação). Neste contexto, o objetivo do presente projeto é
 
 > Realizar a transformação digital necessária para prover solução atualizada, de acesso fácil e rápido ao conteúdo das tabelas de procedimentos, medicamentos e outros do SUS.
 
-A transformação digital será realizada por meio de quatro produtos: (a) [API](api) para acesso aos dados geridos pelo SIGTAP; (b) cliente [web](web); (c) cliente [mobile](mobile) e (d) cliente via linha de comandos ([cli](cli)).
+## Organização da solução
 
-# SIGTAP (corrente)
+A solução compreende quatro componentes: (a) [API](api) para acesso aos dados geridos pelo SIGTAP; (b) cliente [web](web); (c) cliente [mobile](mobile) e (d) cliente via linha de comandos ([cli](cli)). Estes quatro componentes fazem uso, direto ou indiretamente, do módulo [core](core), que implementa a funcionalidade de busca de procedimento.
 
-SIGTAP é o Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do SUS.
-Onde obter detalhes:
+# Sistema existente
+
+SIGTAP é o Sistema de Gerenciamento da Tabela de Procedimentos, Medicamentos, Órteses, Próteses e Materiais Especiais do SUS. Onde obter detalhes:
 
 - No portal do [SIGTAP](http://sigtap.datasus.gov.br/) onde, inclusive, poderá fazer uso da versão web para consultas.
 - Na [wiki](https://wiki.saude.gov.br/sigtap) do SIGTAP.
