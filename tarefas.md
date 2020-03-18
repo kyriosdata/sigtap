@@ -4,7 +4,7 @@
 
 - Diretório FTP onde competências são disponibilizadas: ftp://ftp2.datasus.gov.br/pub/sistemas/tup/downloads
 - Usar [Apache Commons Net](https://commons.apache.org/proper/commons-net/) para acesso ao FTP Server do Datasus, onde competências são disponibilizadas.
-- Usar [Apache Camel](https://camel.apache.org/) para a integração do software a ser criado com o depósito de dados oferecido pelo DATASUS. Observe que deve considerar esta conexão como "volátil". 
+- Usar [Apache Camel](https://camel.apache.org/) para a integração do software a ser criado com o depósito de dados oferecido pelo DATASUS. Observe que deve considerar esta conexão como "volátil". [Univocity-parser](https://www.univocity.com/pages/univocity_parsers_fixed_width.html#working-with-fixed-width) para acesso a arquivos texto com campos de tamanho fixo.
 
 ## Descompressão
 
