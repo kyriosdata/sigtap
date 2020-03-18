@@ -1,3 +1,2 @@
-# Core
-
-Implementação das funções de busca de procedimentos a ser implementada em Java.
+﻿# Escopo e objetivo
+_Operações básicas do SIGTAP_. 
