@@ -93,6 +93,7 @@
         <findsecbugs-plugin.version>1.10.1</findsecbugs-plugin.version>
 
         <commons.net.versao>3.6</commons.net.versao>
+        <univocity.parsers.versao>2.1.1</univocity.parsers.versao>
     </properties>
 
     <dependencies>
@@ -101,6 +102,12 @@
             <groupId>commons-net</groupId>
             <artifactId>commons-net</artifactId>
             <version>${commons.net.versao}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.univocity</groupId>
+            <artifactId>univocity-parsers</artifactId>
+            <version>${univocity.parsers.versao}</version>
         </dependency>
 
         <dependency>

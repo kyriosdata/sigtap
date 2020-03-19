@@ -15,13 +15,26 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Executa download de tabela unificada de procedimentos conforme a
+ * configuraçao padrão disponível no momento em que esta classe é escrita.
+ * Caso o servidor, o diretório e/ou o formato do nome dos arquivos seja
+ * alterado, então isto deve ser indicado por meio de variáveis de ambiente,
+ * conforme definido abaixo.
+ *
+ * <p>O servidor de ftp
+ * deve ser definido pela variável de ambiente DATASUS_FTP_SERVER. O
+ * diretório no qual os arquivos são consultados é definido pela variável de
+ * ambiente DATASUS_FTP_DIR. O formato padrão dos arquivos é estabelecido
+ * pela variável de ambiente DATASUS_FTP_FMT.</p>
+ */
 public class DownloadTabelaUnificada {
 
     private static final Logger logger =
             LoggerFactory.getLogger(DownloadTabelaUnificada.class);
-    public static final String FTP_SERVER = "ftp2.datasus.gov.br";
-    public static final String DIRECTORY = "/pub/sistemas/tup/downloads/";
-    public static final String PREFIXO = "TabelaUnificada_%s_v";
+    private static final String FTP_SERVER = "ftp2.datasus.gov.br";
+    private static final String DIRECTORY = "/pub/sistemas/tup/downloads/";
+    private static final String FORMAT = "TabelaUnificada_%s_v";
 
     /**
      * Executa download do arquivo contendo a tabela unificada de procedimentos
@@ -68,14 +81,15 @@ public class DownloadTabelaUnificada {
                                       String dir) {
         FTPClient ftpClient = new FTPClient();
         try {
-            ftpClient.connect(FTP_SERVER);
-            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+            ftpClient.connect(ftpServer());
             ftpClient.login("anonymous", "");
+            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
 
             File file = new File(dir + File.separator + arquivo);
             FileOutputStream fos = new FileOutputStream(file);
             OutputStream os = new BufferedOutputStream(fos);
-            ftpClient.retrieveFile(DIRECTORY + arquivo, os);
+            ftpClient.retrieveFile(directory() + arquivo, os);
+            os.close();
             ftpClient.logout();
             ftpClient.disconnect();
             return file;
@@ -86,14 +100,14 @@ public class DownloadTabelaUnificada {
     }
 
     public static List<String> getNomesArquivosPara(String competencia) {
-        final String prefixo = String.format(PREFIXO, competencia);
+        final String prefixo = String.format(format(), competencia);
         FTPClient ftpClient = new FTPClient();
         try {
-            ftpClient.connect(FTP_SERVER);
+            ftpClient.connect(ftpServer());
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
             ftpClient.login("anonymous", "");
 
-            FTPFile[] files = ftpClient.listFiles(DIRECTORY);
+            FTPFile[] files = ftpClient.listFiles(directory());
 
             List<String> arquivos = Arrays.stream(files)
                     .filter(f -> f.getName().startsWith(prefixo))
@@ -108,5 +122,32 @@ public class DownloadTabelaUnificada {
             logger.error(exp.getMessage());
             throw new RuntimeException("erro ao listar arquivos de ftp server");
         }
+    }
+
+    private static String ftpServer() {
+        final String server = System.getenv("DATASUS_FTP_SERVER");
+        if (server == null) {
+            return FTP_SERVER;
+        }
+
+        return server;
+    }
+
+    private static String directory() {
+        final String dir = System.getenv("DATASUS_FTP_DIR");
+        if (dir == null) {
+            return DIRECTORY;
+        }
+
+        return dir;
+    }
+
+    private static String format() {
+        final String format = System.getenv("DATASUS_FTP_FMT");
+        if (format == null) {
+            return FORMAT;
+        }
+
+        return format;
     }
 }
