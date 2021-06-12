@@ -16,3 +16,11 @@ SIGTAP produzido pelo DATASUS podem ser encontrados:
 
 - No portal do [SIGTAP](http://sigtap.datasus.gov.br/) onde, inclusive, poderá fazer uso da versão web para consultas.
 - Na [wiki](https://wiki.saude.gov.br/sigtap) do SIGTAP.
+
+
+## Projetos correlatos
+
+- [CBO](https://github.com/kyriosdata/cbo)
+- [CIAP-2](https://github.com/kyriosdata/ciap2)
+- [CID-10](https://github.com/kyriosdata/cid10)
+
