@@ -22,5 +22,6 @@ SIGTAP produzido pelo DATASUS podem ser encontrados:
 
 - [CBO](https://github.com/kyriosdata/cbo)
 - [CIAP-2](https://github.com/kyriosdata/ciap2)
+- [CNES](https://github.com/kyriosdata/cnes)
 - [CID-10](https://github.com/kyriosdata/cid10)
 
